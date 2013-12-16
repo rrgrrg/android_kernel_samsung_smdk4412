@@ -1,0 +1,25 @@
+#!/system/bin/sh
+
+if [ "$2" ]; then
+    rootaccess=$2
+
+    case "${rootaccess}" in
+	on)
+	    if [ -f /system/xbin/sus ]; then
+              mount -o rw,remount /system
+	      rename /system/xbin/sus /system/xbin/su
+              mount -o ro,remount /system
+	    fi
+	    ;;
+	off)
+	    if [ -f /system/xbin/su ]; then
+              mount -o rw,remount /system
+	      rename /system/xbin/su /system/xbin/sus
+              mount -o ro,remount /system
+	    fi
+	    ;;
+    esac
+
+fi
+
+echo ${rootaccess}

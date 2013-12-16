@@ -1,0 +1,10 @@
+The dynamic sync control interface uses Android kernel's unique early
+suspend / lat resume interface.
+
+While screen is on, file sync is disabled
+when screen is off, a file sync is called to flush all outstanding writes
+and restore file sync operation as normal.
+
+Signed-off-by: Paul Reioux <reioux@gmail.com>
+
+https://github.com/faux123/mako/commit/954ba3e7215081922867d7622033b64adab348de

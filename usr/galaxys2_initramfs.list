@@ -1,0 +1,56 @@
+dir /cache 755 0 0
+dir /dev 755 0 0
+dir /dev/block 755 0 0
+nod /dev/block/mmcblk0 600 0 0 b 179 0
+nod /dev/block/mmcblk0p1 600 0 0 b 179 1
+nod /dev/block/mmcblk0p2 600 0 0 b 179 2
+nod /dev/block/mmcblk0p3 600 0 0 b 179 3
+nod /dev/block/mmcblk0p4 600 0 0 b 179 4
+nod /dev/block/mmcblk0p5 600 0 0 b 179 5
+nod /dev/block/mmcblk0p6 600 0 0 b 179 6
+nod /dev/block/mmcblk0p7 600 0 0 b 179 7
+nod /dev/block/mmcblk0p8 600 0 0 b 179 8
+nod /dev/block/mmcblk0p9 600 0 0 b 179 9
+nod /dev/block/mmcblk0p10 600 0 0 b 179 10
+nod /dev/block/mmcblk0p11 600 0 0 b 179 11
+nod /dev/block/mmcblk0p12 600 0 0 b 179 12
+nod /dev/block/mmcblk1 600 0 0 b 179 16
+nod /dev/block/mmcblk1p1 600 0 0 b 179 17
+slink /init /stage1/init 777 0 0
+dir /proc 755 0 0
+dir /stage1 755 0 0
+file /stage1/busybox source/usr/galaxys2_initramfs_files/busybox 755 0 0
+file /stage1/init source/usr/galaxys2_initramfs_files/init 755 0 0
+dir /sys 755 0 0
+dir /res 755 0 0
+dir /res/customconfig 755 0 0
+dir /res/customconfig/actions 755 0 0
+file /res/haveged source/usr/stweaks/haveged 755 0 0
+file /res/uci.sh source/usr/stweaks/uci.sh 755 0 0
+file /res/customconfig/customconfig.xml source/usr/stweaks/customconfig/customconfig.xml 644 0 0
+file /res/STweaks.apk source/usr/galaxys2_initramfs_files/STweaks.apk 644 0 0
+file /res/lights.exynos4.so source/usr/galaxys2_initramfs_files/lights.exynos4.so 644 0 0
+file /res/customconfig/customconfig-helper source/usr/stweaks/customconfig/customconfig-helper 644 0 0
+file /res/customconfig/default.profile source/usr/stweaks/customconfig/default.profile 644 0 0
+file /res/customconfig/actions/bln_effect source/usr/stweaks/customconfig/actions/bln_effect 644 0 0
+file /res/customconfig/actions/check_cpu_voltage source/usr/stweaks/customconfig/actions/check_cpu_voltage 644 0 0
+file /res/customconfig/actions/cpu-voltage source/usr/stweaks/customconfig/actions/cpu-voltage 644 0 0
+file /res/customconfig/actions/generic source/usr/stweaks/customconfig/actions/generic 644 0 0
+file /res/customconfig/actions/generic01 source/usr/stweaks/customconfig/actions/generic01 644 0 0
+file /res/customconfig/actions/generic10 source/usr/stweaks/customconfig/actions/generic10 644 0 0
+file /res/customconfig/actions/generickmem source/usr/stweaks/customconfig/actions/generickmem 644 0 0
+file /res/customconfig/actions/generickmem01 source/usr/stweaks/customconfig/actions/generickmem01 644 0 0
+file /res/customconfig/actions/navigationbar source/usr/stweaks/customconfig/actions/navigationbar 644 0 0
+file /res/customconfig/actions/reset-fuelgauge source/usr/stweaks/customconfig/actions/reset-fuelgauge 644 0 0
+file /res/customconfig/actions/rootaccess source/usr/stweaks/customconfig/actions/rootaccess 644 0 0
+file /res/customconfig/actions/schedfeat source/usr/stweaks/customconfig/actions/schedfeat 644 0 0
+file /res/customconfig/actions/sound_volume source/usr/stweaks/customconfig/actions/sound_volume 644 0 0
+file /res/customconfig/actions/test-bln source/usr/stweaks/customconfig/actions/test-bln 644 0 0
+dir /sbin 755 0 0
+dir /sbin/ext 755 0 0
+file /sbin/ext/haveged.sh source/usr/stweaks/sbin/ext/haveged.sh 755 0 0
+file /sbin/ext/post-init.sh source/usr/stweaks/sbin/ext/post-init.sh 755 0 0
+dir /mnt 755 0 0
+dir /mnt/.lfs 755 0 0
+file /stage1/boot.cpio ../../ramdisk.cpio 644 0 0
+file /stage1/recovery.cpio ../../ramdisk-recovery.cpio 644 0 0

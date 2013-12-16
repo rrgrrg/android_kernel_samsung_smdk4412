@@ -1,0 +1,29 @@
+#!/system/bin/sh
+
+if [ "$2" ]; then
+    navigationbar=$2
+    ON_NAVIGATIONBAR="qemu.hw.mainkeys=0"
+    OFF_NAVIGATIONBAR="qemu.hw.mainkeys=1"
+        
+    mount -o rw,remount /system
+        
+    PROP_NAVBAR=$(grep -e '^qemu.hw.mainkeys' /system/build.prop)
+    case "${navigationbar}" in
+        on)
+            if [ ! "$PROP_NAVBAR" ]; then
+                echo $ON_NAVIGATIONBAR >> /system/build.prop
+            elif [ "$PROP_NAVBAR" != "$ON_NAVIGATIONBAR" ]; then
+                sed -i -e "s/^qemu.hw.mainkeys.*/${ON_NAVIGATIONBAR}/g" /system/build.prop
+            fi
+            ;;
+        off)
+            if [ "$PROP_NAVBAR" ]; then
+                sed -i -e '/^qemu.hw.mainkeys.*/d' /system/build.prop
+            fi
+            ;;
+    esac
+
+    mount -o ro,remount /system
+fi
+
+echo ${navigationbar}
